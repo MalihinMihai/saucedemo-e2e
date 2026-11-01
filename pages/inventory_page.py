@@ -13,7 +13,7 @@ class InventoryPage:
 ##Action we can do on the page
 
 
-def add_item_to_cart(self, item_name: str):
-    self.page.locator(f"[data-test='add-to-cart-sauce-labs-{item_name}']").click()
+    def add_item_to_cart(self, item_name: str):
+        self.page.locator(f"[data-test='add-to-cart-sauce-labs-{item_name}']").click()
 
 
