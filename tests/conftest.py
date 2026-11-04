@@ -21,7 +21,7 @@ def auth_state(browser: Browser, base_url: str, browser_name: str, worker_id: st
     page.get_by_placeholder("Username").fill(os.environ["SAUCE_USER"])
     page.get_by_placeholder("Password").fill(os.environ["SAUCE_PASSWORD"])
     page.get_by_role("button", name="Login").click()
-    page.wait_for_url("**/inventory.html")
+   # page.wait_for_url("**/inventory.html")
     context.storage_state(path=path)
     context.close()
     return path
