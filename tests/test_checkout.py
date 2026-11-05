@@ -1,10 +1,10 @@
 from playwright.sync_api import Page, expect
-
+import pytest
 from pages.cart_page import CartPage
 from pages.checkout_page import CheckoutPage
 from pages.inventory_page import InventoryPage
 
-
+@pytest.mark.regression
 def test_checkout_process(logged_in_page: Page):
     iventory_page = InventoryPage(logged_in_page)
     cart_page = CartPage(logged_in_page)
