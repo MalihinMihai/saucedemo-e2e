@@ -1,8 +1,0 @@
-Am ramas sa:
-1.Inteleg ce fac locatorii direct din cod. X
-2.Sa vad cum se face executia. X
-
-Am ramas sa:
-1.Automaizez pagina cu produse.
-2.Scriu metodele pentru pagina cu produse.
-3.Inteleg ce face filter.
