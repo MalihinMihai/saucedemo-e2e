@@ -27,3 +27,19 @@ saucedemo/
   * Cart quantity verification (2 items).
   * Checkout form submission (`John`, `Doe`, `12345`).
   * Final order execution (`finish_order`).
+
+## Test Suite
+
+**6 tests · 2 browsers (Chromium, Firefox) · parallel execution with pytest-xdist**
+
+## Tests
+
+| File | Test | What it verifies |
+|---|---|---|
+| `test_login.py` | `test_login_errors` (parametrized, 4 cases) | login error messages: locked-out user, wrong password, missing username, missing password |
+| `test_inventory.py` | `test_inventory_page_products` | the products page loads correctly after authentication |
+| `test_checkout.py` | `test_checkout_process` | full flow: add item to cart, checkout, order confirmation |
+
+\`\`\`bash
+pytest -v
+\`\`\`
