@@ -6,6 +6,7 @@ Automated E2E testing framework built with **Python**, **Pytest**, and **Playwri
 
 ---
 
+
 ## Structure
 
 ```text
@@ -18,28 +19,22 @@ saucedemo/
 ├── pytest.ini            # Pytest configuration
 └── requirements.txt      # Project dependencies
 
-## Test Coverage & Architecture
-
-* **Login Tests**: UI error validation (locked-out user, invalid credentials, missing fields).
-* **Inventory Tests**: Page title (`Products`) and product count (6 items) validation.
-* **Checkout Flow**: E2E test – item selection, cart verification, and order completion.
-* **Auth & Architecture**: Session storage reuse (`auth/*.json`) + Page Object Model design.
-  * Cart quantity verification (2 items).
-  * Checkout form submission (`John`, `Doe`, `12345`).
-  * Final order execution (`finish_order`).
-
-## Test Suite
-
-**6 tests · 2 browsers (Chromium, Firefox) · parallel execution with pytest-xdist**
+```
 
 ## Tests
 
-| File | Test | What it verifies |
-|---|---|---|
-| `test_login.py` | `test_login_errors` (parametrized, 4 cases) | login error messages: locked-out user, wrong password, missing username, missing password |
-| `test_inventory.py` | `test_inventory_page_products` | the products page loads correctly after authentication |
-| `test_checkout.py` | `test_checkout_process` | full flow: add item to cart, checkout, order confirmation |
+| File                 | Test                            | What it verifies                |
+|----------------------|----------------------------------|----------------------------------|
+| `test_login.py`      | `test_login_errors` (4 cases)   | Login error messages            |
+| `test_inventory.py`  | `test_inventory_page_products`  | Products page loads after login |
+| `test_checkout.py`   | `test_checkout_process`         | Full checkout flow              |
 
-\`\`\`bash
+## Run locally
+
+```bash
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+playwright install --with-deps chromium firefox
+cp .env.example .env
 pytest -v
-\`\`\`
+```
